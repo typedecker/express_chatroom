@@ -24,8 +24,11 @@
       }
 
       function messageSentCallback() {
-        message_box = document.getElementById('message_box');
-        message_box.value = '';
+        setTimeout(() => {
+          message_box = document.getElementById('message_box');
+          message_box.value = '';
+          return;
+        }, 5000)
         return;
       }
 
