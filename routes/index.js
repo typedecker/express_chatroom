@@ -38,6 +38,9 @@ function saveChats() {
 }
 
 function appendChat(author, msg) {
+  if (msg.replaceAll(' ', '') == '' || author == '[SYSTEM]') {
+    return;
+  }
   if (author == 'typedecker' && msg == '/clear') {
     clearChat();
     author = '[SYSTEM]';
