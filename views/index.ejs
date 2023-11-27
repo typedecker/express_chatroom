@@ -15,11 +15,10 @@
               console.log(data[i]);
               continue;
             }
+            var container = document.getElementById('chatroom');
+            container.innerHTML = chatHTML;
           })
         });
-
-        var container = document.getElementById('chatroom');
-        container.innerHTML = chatHTML;
         return;
       }
 
