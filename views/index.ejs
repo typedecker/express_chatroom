@@ -15,12 +15,15 @@
               console.log(data[i]);
               continue;
             }
-
-            var container = document.getElementById('chatroom');
-            container.innerHTML = chatHTML;
-            container.scrollTop = container.scrollHeight;
           })
         });
+
+        function onMessageSent() {
+          var container = document.getElementById('chatroom');
+          container.innerHTML = chatHTML;
+          container.scrollTop = container.scrollHeight;
+          return;
+        }
         return;
       }
 
@@ -40,7 +43,7 @@
       Name: <input name = "author_box" type="text">
       <br><br>
       <input id = "message_box" name = "message_box" type="text"><br>
-      <input id = "submit_button" type = "submit" value = "[SEND]">
+      <input id = "submit_button" type = "submit" value = "[SEND]" onclick = 'onMessageSent();'>
   </form>
   </body>
 </html>
