@@ -18,12 +18,14 @@
           })
         });
 
-        function onMessageSent() {
-          var container = document.getElementById('chatroom');
-          container.innerHTML = chatHTML;
-          container.scrollTop = container.scrollHeight;
-          return;
-        }
+        var container = document.getElementById('chatroom');
+        container.innerHTML = chatHTML;
+        return;
+      }
+
+      function onMessageSent() {
+        var container = document.getElementById('chatroom');
+        container.scrollTop = container.scrollHeight;
         return;
       }
 
