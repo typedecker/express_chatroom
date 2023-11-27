@@ -41,7 +41,7 @@ function appendChat(author, msg) {
   if (author == 'typedecker' && msg == '/clear') {
     clearChat();
     author = '[SYSTEM]';
-    msg = '<Chat cleared successfully>'
+    msg = '{Chat cleared successfully.}'
   }
   var chat = {
     author : author,
