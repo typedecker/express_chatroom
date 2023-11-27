@@ -12,6 +12,7 @@
             var chatHTML = '';
             for (var i = 0; i < data.length; i++) {
               chatHTML += '<div class = "container"><b>' + data[i].author + '</b>' + ' : ' + data[i].message + '</div>';
+              console.log(data[i]);
               continue;
             }
 
@@ -28,7 +29,7 @@
           message_box = document.getElementById('message_box');
           message_box.value = '';
           return;
-        }, 5000)
+        }, 5000);
         return;
       }
 
