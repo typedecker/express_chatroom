@@ -13,10 +13,12 @@ function loadChats() {
   try {
     rawChats = fs.readFileSync('./chats.txt').toString().split('\n');
     for (var i = 0; i < rawChats.length; i++) {
-      if (author == '' | message == '') {
+      var info = rawChats[i].split(CHAT_STORAGE_DELIMETER);
+
+      if (info[0] == '' | info[1] == '') {
         continue;
       }
-      var info = rawChats[i].split(CHAT_STORAGE_DELIMETER);
+
       var chat = {
         author : info[0],
         message : info[1],
