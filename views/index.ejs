@@ -24,15 +24,6 @@
         return;
       }
 
-      function messageSentCallback() {
-        setTimeout(() => {
-          message_box = document.getElementById('message_box');
-          message_box.value = '';
-          return;
-        }, 5000);
-        return;
-      }
-
       // call fetchMostRecentData once every 10s
       setInterval(fetchMostRecentData, 1000);
     </script>
@@ -49,7 +40,7 @@
       Name: <input name = "author_box" type="text">
       <br><br>
       <input id = "message_box" name = "message_box" type="text"><br>
-      <input id = "submit_button" type = "submit" value = "[SEND]" onclick = "messageSentCallback();">
+      <input id = "submit_button" type = "submit" value = "[SEND]">
   </form>
   </body>
 </html>
