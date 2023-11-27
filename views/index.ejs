@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <script>
+      function fetchMostRecentData() {
+        fetch('/data')
+        .then((response) => {
+          response.json()
+          .then((data) => {
+            console.log(data, 'DATA RECIEVED');
+            var chatHTML = '';
+            for (var i = 0; i < data.length; i++) {
+              chatHTML += '<div class = "container"><b>' + data[i].author + '</b>' + ' : ' + data[i].message + '</div>';
+              continue;
+            }
+
+            var container = document.getElementById('chatroom');
+            container.innerHTML = chatHTML;
+            container.scrollTop = container.scrollHeight;
+          })
+        });
+        return;
+      }
+
+      // call fetchMostRecentData once every 10s
+      setInterval(fetchMostRecentData, 1000);
+    </script>
+  </head>
+  <body>
+    <h1>Adi-Chat</h1>
+    <p>Welcome to AdiChat</p>
+    <div class = "chatroom" id = "chatroom" style = "overflow:scroll; height:400px;">
+      <% chats.forEach(function(chat){ %>
+        <div class = "container"><b><%= chat.author %></b> : <%= chat.message %></div>
+      <% }) %>
+    </div>
+    <form method = "post" action = "./">
+      Name: <input name = "author_box" type="text">
+      <br><br>
+      <input name = "message_box" type="text"><br>
+      <input id = "submit_button" type = "submit" value = "[SEND]">
+  </form>
+  </body>
+</html>
